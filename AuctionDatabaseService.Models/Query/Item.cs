@@ -16,7 +16,7 @@ namespace AuctionDatabaseService.Models.Query
         public string Description { get; set; }
 
         [DataMember]
-        public List<byte[]> Images { get; set; }
+        public byte[] Image { get; set; }
 
         [DataMember]
         public Category Category { get; set; }

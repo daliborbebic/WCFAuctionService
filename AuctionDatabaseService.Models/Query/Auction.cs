@@ -20,6 +20,9 @@ namespace AuctionDatabaseService.Models.Query
         public int Duration { get; set; }
 
         [DataMember]
+        public bool IsActive { get; set; }
+
+        [DataMember]
         public double StartingPrice { get; set; }
 
         [DataMember]
