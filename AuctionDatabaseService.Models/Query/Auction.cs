@@ -26,7 +26,16 @@ namespace AuctionDatabaseService.Models.Query
         public double StartingPrice { get; set; }
 
         [DataMember]
-        public Item Item { get; set; }
+        public string Name { get; set; }
+
+        [DataMember]
+        public string Description { get; set; }
+
+        [DataMember]
+        public byte[] Image { get; set; }
+
+        [DataMember]
+        public Category Category { get; set; }
 
         [DataMember]
         public User Author { get; set; }

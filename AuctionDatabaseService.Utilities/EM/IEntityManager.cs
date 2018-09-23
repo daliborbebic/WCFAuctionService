@@ -16,9 +16,6 @@ namespace AuctionDatabaseService.Utilities.EM
 
         IOfferService OfferService { get; }
 
-        IItemService ItemService { get; }
-
-
         T Add<T, S>(T entity);
 
         void AddRange<T, S>(IEnumerable<T> entities);

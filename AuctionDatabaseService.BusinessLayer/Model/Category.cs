@@ -6,13 +6,13 @@ namespace AuctionDatabaseService.BusinessLayer.Model
     {
         public Category()
         {
-            Items = new List<Item>();
+            Auctions = new List<Auction>();
         }
 
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public ICollection<Item> Items { get; set; }
+        public ICollection<Auction> Auctions { get; set; }
     }
 }

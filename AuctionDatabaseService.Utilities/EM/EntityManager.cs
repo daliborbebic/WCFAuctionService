@@ -12,15 +12,13 @@ namespace AuctionDatabaseService.Utilities.EM
             IAuctionService auctionService,
             ICommentService commentService,
             ICategoryService categoryService,
-            IOfferService offerService,
-            IItemService itemService)
+            IOfferService offerService)
         {
             UserService = userService;
             AuctionService = auctionService;
             CommentService = commentService;
             CategoryService = categoryService;
             OfferService = offerService;
-            ItemService = itemService;
         }
 
         #region Services
@@ -34,8 +32,6 @@ namespace AuctionDatabaseService.Utilities.EM
         public ICategoryService CategoryService { get; }
 
         public IOfferService OfferService { get; }
-
-        public IItemService ItemService { get; }
 
         #endregion Services
 
@@ -107,10 +103,6 @@ namespace AuctionDatabaseService.Utilities.EM
             else if (typeof(T) == typeof(Auction))
             {
                 return AuctionService as IService<T>;
-            }
-            else if (typeof(T) == typeof(Item))
-            {
-                return ItemService as IService<T>;
             }
             else if (typeof(T) == typeof(Offer))
             {

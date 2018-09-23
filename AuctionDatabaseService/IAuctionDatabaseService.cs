@@ -71,27 +71,6 @@ namespace AuctionDatabaseService
         void DeleteComments(IEnumerable<Comment> comments);
 
         [OperationContract]
-        Item CreateItem(Item item);
-
-        [OperationContract]
-        void CreateItems(IEnumerable<Item> items);
-
-        [OperationContract]
-        Item GetItemById(int itemId);
-
-        [OperationContract]
-        List<Item> GetAllItems();
-
-        [OperationContract]
-        Item UpdateItem(Item item);
-
-        [OperationContract]
-        void DeleteItem(Item item);
-
-        [OperationContract]
-        void DeleteItems(IEnumerable<Item> items);
-
-        [OperationContract]
         User CreateUser(User user);
 
         [OperationContract]

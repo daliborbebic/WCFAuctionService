@@ -50,16 +50,6 @@ namespace AuctionDatabaseService
             _entityManager.AddRange<Comment, Bl.Comment>(comments);
         }
 
-        public Item CreateItem(Item item)
-        {
-            return _entityManager.Add<Item, Bl.Item>(item);
-        }
-
-        public void CreateItems(IEnumerable<Item> items)
-        {
-            _entityManager.AddRange<Item, Bl.Item>(items);
-        }
-
         public Offer CreateOffer(Offer offer)
         {
             return _entityManager.Add<Offer, Bl.Offer>(offer);
@@ -113,16 +103,6 @@ namespace AuctionDatabaseService
             _entityManager.RemoveRange<Comment, Bl.Comment>(comments);
         }
 
-        public void DeleteItem(Item item)
-        {
-            _entityManager.Remove<Item, Bl.Item>(item);
-        }
-
-        public void DeleteItems(IEnumerable<Item> items)
-        {
-            _entityManager.RemoveRange<Item, Bl.Item>(items);
-        }
-
         public void DeleteOffer(Offer offer)
         {
             _entityManager.Remove<Offer, Bl.Offer>(offer);
@@ -161,11 +141,6 @@ namespace AuctionDatabaseService
             return _entityManager.GetAll<Comment, Bl.Comment>();
         }
 
-        public List<Item> GetAllItems()
-        {
-            return _entityManager.GetAll<Item, Bl.Item>();
-        }
-
         public List<Offer> GetAllOffers()
         {
             return _entityManager.GetAll<Offer, Bl.Offer>();
@@ -192,11 +167,6 @@ namespace AuctionDatabaseService
         public Comment GetCommentById(int commentId)
         {
             return _entityManager.GetById<Comment, Bl.Comment>(commentId);
-        }
-
-        public Item GetItemById(int itemId)
-        {
-            return _entityManager.GetById<Item, Bl.Item>(itemId);
         }
 
         public Offer GetOfferById(int offerId)
@@ -226,11 +196,6 @@ namespace AuctionDatabaseService
         public Comment UpdateComment(Comment comment)
         {
             return _entityManager.Update<Comment, Bl.Comment>(comment);
-        }
-
-        public Item UpdateItem(Item item)
-        {
-            return _entityManager.Update<Item, Bl.Item>(item);
         }
 
         public Offer UpdateOffer(Offer offer)

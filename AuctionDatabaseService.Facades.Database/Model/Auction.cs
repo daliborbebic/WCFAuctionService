@@ -17,6 +17,12 @@ namespace AuctionDatabaseService.Facades.Database.Model
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public byte[] Image { get; set; }
+
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
@@ -25,9 +31,9 @@ namespace AuctionDatabaseService.Facades.Database.Model
 
         public double StartingPrice { get; set; }
 
-        public virtual Item Item { get; set; }
-
         public virtual User Author { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public virtual ICollection<Offer> Offers { get; set; }
 

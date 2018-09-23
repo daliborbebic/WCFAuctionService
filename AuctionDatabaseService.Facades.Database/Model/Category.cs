@@ -9,7 +9,7 @@ namespace AuctionDatabaseService.Facades.Database.Model
     {
         public Category()
         {
-            Items = new List<Item>();
+            Auctions = new List<Auction>();
         }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,6 +17,6 @@ namespace AuctionDatabaseService.Facades.Database.Model
 
         public string Name { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; }
+        public virtual ICollection<Auction> Auctions { get; set; }
     }
 }

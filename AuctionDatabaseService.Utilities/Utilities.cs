@@ -13,7 +13,7 @@ namespace AuctionDatabaseService.Utilities
 
         public static IEntityManager CreateEntityManager()
         {
-            var em = new EntityManager(new UserService(), new AuctionService(), new CommentService(), new CategoryService(), new OfferService(), new ItemService());
+            var em = new EntityManager(new UserService(), new AuctionService(), new CommentService(), new CategoryService(), new OfferService());
             return em;
         }
     }

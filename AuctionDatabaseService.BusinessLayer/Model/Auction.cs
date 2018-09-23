@@ -13,6 +13,12 @@ namespace AuctionDatabaseService.BusinessLayer.Model
 
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public byte[] Image { get; set; }
+
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
@@ -21,9 +27,9 @@ namespace AuctionDatabaseService.BusinessLayer.Model
 
         public double StartingPrice { get; set; }
 
-        public Item Item { get; set; }
-
         public User Author { get; set; }
+
+        public Category Category { get; set; }
 
         public ICollection<Offer> Offers { get; set; }
 

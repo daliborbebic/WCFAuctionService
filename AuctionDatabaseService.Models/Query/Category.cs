@@ -13,6 +13,6 @@ namespace AuctionDatabaseService.Models.Query
         public string Name { get; set; }
 
         [DataMember]
-        public List<Item> Items { get; set; }
+        public List<Auction> Auctions { get; set; }
     }
 }
