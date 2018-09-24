@@ -44,10 +44,24 @@ namespace AuctionDatabaseService.BusinessLayer
             return comments;
         }
 
+        public List<Comment> GetByAuction(int auctionId)
+        {
+            var dbComments = _commentRepository.GetByAuction(auctionId);
+            var comments = Mapper.Map<List<Comment>>(dbComments);
+            return comments;
+        }
+
         public Comment GetById(int commentId)
         {
             var dbComment = _commentRepository.GetById(commentId);
             var comments = Mapper.Map<Comment>(dbComment);
+            return comments;
+        }
+
+        public List<Comment> GetByUser(int userId)
+        {
+            var dbComments = _commentRepository.GetByUser(userId);
+            var comments = Mapper.Map<List<Comment>>(dbComments);
             return comments;
         }
 

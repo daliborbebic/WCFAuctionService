@@ -117,5 +117,23 @@ namespace AuctionDatabaseService
 
         [OperationContract]
         bool VerifyLoginInformation(string emailAddress, string password);
+
+        [OperationContract]
+        List<Comment> GetCommentsByAuction(int AuctionId);
+
+        [OperationContract]
+        List<Auction> GetAuctionsByUser(int userId);
+
+        [OperationContract]
+        List<Comment> GetCommentsByUser(int userId);
+
+        [OperationContract]
+        List<Offer> GetOffersByUser(int userId);
+
+        [OperationContract]
+        List<Offer> GetOffersByAuction(int auctionId);
+
+        [OperationContract]
+        List<Auction> GetAuctionsByCategory(int categoryId);
     }
 }

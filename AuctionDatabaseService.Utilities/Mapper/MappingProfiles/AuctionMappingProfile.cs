@@ -12,9 +12,12 @@ namespace AuctionDatabaseService.Utilities.AutoMapper.MappingProfiles
         {
             CreateMap<Bl.Auction, Auction>()
                 .ForMember(dest => dest.IsActive, conf => conf.ResolveUsing(src => src.EndDateTime <= DateTime.Now));
+
             CreateMap<Auction, Bl.Auction>();
 
-            CreateMap<Fa.Auction, Bl.Auction>().ReverseMap();
+            CreateMap<Fa.Auction, Bl.Auction>()
+                .ForMember(dest => dest.Id, conf => conf.MapFrom(src => src.AuctionId))
+                .ReverseMap();
         }
     }
 }

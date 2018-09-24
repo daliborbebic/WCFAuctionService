@@ -35,10 +35,10 @@ namespace AuctionDatabaseService.Models.Query
         public byte[] Image { get; set; }
 
         [DataMember]
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
 
         [DataMember]
-        public User Author { get; set; }
+        public int UserId { get; set; }
 
         [DataMember]
         public List<Offer> Offers { get; set; }

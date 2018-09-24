@@ -7,7 +7,7 @@ namespace AuctionDatabaseService.Facades.Database
     {
         public DatabaseContextConfiguration()
         {
-            SetDatabaseInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
+            SetDatabaseInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
             SetProviderServices(SqlProviderServices.ProviderInvariantName, SqlProviderServices.Instance);
         }
     }

@@ -13,14 +13,20 @@ namespace AuctionDatabaseService.Facades.Database.Model
         }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int OfferId { get; set; }
 
         public double Value { get; set; }
 
         public DateTime OfferedOn { get; set; }
 
+        public int AuctionId { get; set; }
+
+        [ForeignKey("AuctionId")]
         public virtual Auction Auction { get; set; }
 
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }

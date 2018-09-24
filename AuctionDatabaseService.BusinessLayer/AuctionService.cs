@@ -43,11 +43,25 @@ namespace AuctionDatabaseService.BusinessLayer
             return auctions;
         }
 
+        public List<Auction> GetByCategory(int categoryId)
+        {
+            var dbAuctions = _auctionRepository.GetByCategory(categoryId);
+            var auctions = Mapper.Map<List<Auction>>(dbAuctions);
+            return auctions;
+        }
+
         public Auction GetById(int auctionId)
         {
             var dbAuction = _auctionRepository.GetById(auctionId);
             var auction = Mapper.Map<Auction>(dbAuction);
             return auction;
+        }
+
+        public List<Auction> GetByUser(int userId)
+        {
+            var dbAuctions = _auctionRepository.GetByUser(userId);
+            var auctions = Mapper.Map<List<Auction>>(dbAuctions);
+            return auctions;
         }
 
         public void Remove(Auction auction)

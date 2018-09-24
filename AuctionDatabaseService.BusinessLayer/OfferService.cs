@@ -44,10 +44,24 @@ namespace AuctionDatabaseService.BusinessLayer
             return offers;
         }
 
+        public List<Offer> GetByAuction(int auctionId)
+        {
+            var dbOffers = _offerRepository.GetByAuction(auctionId);
+            var offers = Mapper.Map<List<Offer>>(dbOffers);
+            return offers;
+        }
+
         public Offer GetById(int offerId)
         {
             var dbOffer = _offerRepository.GetById(offerId);
             var offers = Mapper.Map<Offer>(dbOffer);
+            return offers;
+        }
+
+        public List<Offer> GetByUser(int userId)
+        {
+            var dbOffers = _offerRepository.GetByUser(userId);
+            var offers = Mapper.Map<List<Offer>>(dbOffers);
             return offers;
         }
 

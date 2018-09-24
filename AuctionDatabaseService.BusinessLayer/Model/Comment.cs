@@ -14,8 +14,8 @@ namespace AuctionDatabaseService.BusinessLayer.Model
 
         public DateTime PostingDate { get; set; }
 
-        public User Author { get; set; }
+        public int UserId { get; set; }
 
-        public Auction Auction { get; set; }
+        public int AuctionId { get; set; }
     }
 }

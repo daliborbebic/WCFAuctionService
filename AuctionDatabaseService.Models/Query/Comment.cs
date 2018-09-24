@@ -20,9 +20,9 @@ namespace AuctionDatabaseService.Models.Query
         public DateTime PostingDate { get; set; }
 
         [DataMember]
-        public User Author { get; set; }
+        public int UserId { get; set; }
 
         [DataMember]
-        public Auction Auction { get; set; }
+        public int AuctionId { get; set; }
     }
 }

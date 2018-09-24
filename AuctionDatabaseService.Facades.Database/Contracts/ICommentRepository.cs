@@ -18,5 +18,9 @@ namespace AuctionDatabaseService.Facades.Database.Contracts
         void Remove(Comment entity);
 
         void RemoveRange(IEnumerable<Comment> entities);
+
+        List<Comment> GetByAuction(int auctionId);
+
+        List<Comment> GetByUser(int userId);
     }
 }

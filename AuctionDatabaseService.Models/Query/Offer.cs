@@ -16,9 +16,9 @@ namespace AuctionDatabaseService.Models.Query
         public DateTime OfferedOn { get; set; }
 
         [DataMember]
-        public Auction Auction { get; set; }
+        public int AuctionId { get; set; }
 
         [DataMember]
-        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

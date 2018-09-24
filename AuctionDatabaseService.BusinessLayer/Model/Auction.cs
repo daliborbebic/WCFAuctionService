@@ -27,9 +27,9 @@ namespace AuctionDatabaseService.BusinessLayer.Model
 
         public double StartingPrice { get; set; }
 
-        public User Author { get; set; }
+        public int UserId { get; set; }
 
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
 
         public ICollection<Offer> Offers { get; set; }
 

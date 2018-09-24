@@ -10,7 +10,9 @@ namespace AuctionDatabaseService.Utilities.AutoMapper.MappingProfiles
         public OfferMappingProfile()
         {
             CreateMap<Bl.Offer, Offer>().ReverseMap();
-            CreateMap<Bl.Offer, Fa.Offer>().ReverseMap();
+            CreateMap<Bl.Offer, Fa.Offer>()
+                .ForMember(dest => dest.OfferId, conf => conf.MapFrom(src => src.Id))
+                .ReverseMap();
         }
     }
 }

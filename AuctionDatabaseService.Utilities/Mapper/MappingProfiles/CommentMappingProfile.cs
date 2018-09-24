@@ -10,7 +10,9 @@ namespace AuctionDatabaseService.Utilities.AutoMapper.MappingProfiles
         public CommentMappingProfile()
         {
             CreateMap<Bl.Comment, Comment>().ReverseMap();
-            CreateMap<Bl.Comment, Fa.Comment>().ReverseMap();
+            CreateMap<Bl.Comment, Fa.Comment>()
+                .ForMember(dest => dest.CommentId, conf => conf.MapFrom(src => src.Id))
+                .ReverseMap();
         }
     }
 }

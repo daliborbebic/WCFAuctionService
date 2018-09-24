@@ -5,6 +5,7 @@
         static DatabaseContextUtilities()
         {
             Context = new DatabaseContext();
+            Context.Configuration.ProxyCreationEnabled = false;
         }
 
         public static DatabaseContext Context { get; private set; }

@@ -15,7 +15,7 @@ namespace AuctionDatabaseService.Facades.Database.Model
         }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int AuctionId { get; set; }
 
         public string Name { get; set; }
 
@@ -31,8 +31,14 @@ namespace AuctionDatabaseService.Facades.Database.Model
 
         public double StartingPrice { get; set; }
 
-        public virtual User Author { get; set; }
+        public int UserId { get; set; }
 
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         public virtual ICollection<Offer> Offers { get; set; }

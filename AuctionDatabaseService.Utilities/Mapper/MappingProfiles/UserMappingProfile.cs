@@ -10,7 +10,9 @@ namespace AuctionDatabaseService.Utilities.AutoMapper.MappingProfiles
         public UserMappingProfile()
         {
             CreateMap<Bl.User, User>().ReverseMap();
-            CreateMap<Bl.User, Fa.User>().ReverseMap();
+            CreateMap<Bl.User, Fa.User>()
+                .ForMember(dest => dest.UserId, conf => conf.MapFrom(src => src.Id))
+                .ReverseMap();
         }
     }
 }

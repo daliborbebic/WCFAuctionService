@@ -2,6 +2,7 @@
 using System.ServiceModel;
 using AuctionDatabaseService.Models.Query;
 using AuctionDatabaseService.Utilities.EM;
+using AutoMapper;
 using Bl = AuctionDatabaseService.BusinessLayer.Model;
 
 namespace AuctionDatabaseService
@@ -219,6 +220,42 @@ namespace AuctionDatabaseService
         public bool VerifyLoginInformation(string emailAddress, string password)
         {
             return _entityManager.UserService.VerifyLoginInformation(emailAddress, password);
+        }
+
+        public List<Comment> GetCommentsByAuction(int auctionId)
+        {
+            var comments = _entityManager.CommentService.GetByAuction(auctionId);
+            return Mapper.Map<List<Comment>>(comments);
+        }
+
+        public List<Auction> GetAuctionsByUser(int userId)
+        {
+            var auctions = _entityManager.AuctionService.GetByUser(userId);
+            return Mapper.Map<List<Auction>>(auctions);
+        }
+
+        public List<Comment> GetCommentsByUser(int userId)
+        {
+            var comments = _entityManager.CommentService.GetByUser(userId);
+            return Mapper.Map<List<Comment>>(comments);
+        }
+
+        public List<Offer> GetOffersByUser(int userId)
+        {
+            var offers = _entityManager.OfferService.GetByUser(userId);
+            return Mapper.Map<List<Offer>>(offers);
+        }
+
+        public List<Offer> GetOffersByAuction(int auctionId)
+        {
+            var offers = _entityManager.OfferService.GetByAuction(auctionId);
+            return Mapper.Map<List<Offer>>(offers);
+        }
+
+        public List<Auction> GetAuctionsByCategory(int categoryId)
+        {
+            var offers = _entityManager.AuctionService.GetByCategory(categoryId);
+            return Mapper.Map<List<Auction>>(offers);
         }
     }
 }

@@ -11,7 +11,9 @@ namespace AuctionDatabaseService.Utilities.AutoMapper.MappingProfiles
         {
             CreateMap<Bl.Category, Category>().ReverseMap();
 
-            CreateMap<Bl.Category, Fa.Category>().ReverseMap();
+            CreateMap<Bl.Category, Fa.Category>()
+                .ForMember(dest => dest.CategoryId, conf => conf.MapFrom(src => src.Id))
+                .ReverseMap();
         }
     }
 }
